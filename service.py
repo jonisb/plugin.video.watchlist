@@ -2,6 +2,8 @@
 
 import xbmc
 
+from resources.lib.misc import *
+
 
 class Monitor(xbmc.Monitor):
     pass
