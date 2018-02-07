@@ -1,8 +1,8 @@
 ﻿# -*- coding: utf-8 -*-
-
 import xbmc
 
 from resources.lib.misc import *
+from resources.lib.db import DB
 
 
 class Monitor(xbmc.Monitor):
@@ -10,6 +10,7 @@ class Monitor(xbmc.Monitor):
 
 
 if __name__ == '__main__':
+    db = DB(os.path.join(addonprofile, 'database.db'))
     monitor = Monitor()
     try:
         monitor.waitForAbort()
