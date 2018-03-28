@@ -6,6 +6,7 @@ class base(testbase):
     def test_showPlugin(self):
         self.jsonrpc("Addons.ExecuteAddon", addonid)
         result = self.jsonrpc("XBMC.GetInfoLabels", [['Container.PluginName']])
+        self.assertEqual(result["Container.PluginName"], addonid)
         result = self.jsonrpc("XBMC.GetInfoLabels", [['Container.FolderPath']])
         self.assertEqual(result["Container.FolderPath"], addonid)
 
